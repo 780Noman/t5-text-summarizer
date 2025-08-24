@@ -13,8 +13,9 @@ st.set_page_config(page_title="Text Summarizer", layout="wide")
 def load_model():
     """Loads the T5 tokenizer and model from the Hugging Face Hub."""
     try:
-        tokenizer = T5Tokenizer.from_pretrained(MODEL_REPO)
-        model = T5ForConditionalGeneration.from_pretrained(MODEL_REPO)
+        token = st.secrets.get("HUGGING_FACE_TOKEN")
+        tokenizer = T5Tokenizer.from_pretrained(MODEL_REPO, token=token)
+        model = T5ForConditionalGeneration.from_pretrained(MODEL_REPO, token=token)
         return tokenizer, model
     except Exception as e:
         # Return None if model loading fails
