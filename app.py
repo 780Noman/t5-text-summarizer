@@ -3,7 +3,7 @@ from transformers import T5Tokenizer, T5ForConditionalGeneration
 import torch
 
 # The model repository name on Hugging Face Hub
-MODEL_REPO = "Nomi78600/t5-text-summarizer"
+MODEL_REPO = "Nomi78600/t5-text-summerizer"
 
 st.set_page_config(page_title="Text Summarizer", layout="wide")
 
